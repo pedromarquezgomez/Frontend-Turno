@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ListaOperarioService } from 'src/app/services/lista-operario.service';
+import { OperarioService } from 'src/app/services/operario.service';
 import { Operario } from 'src/app/models/operario';
 
 @Component({
@@ -9,16 +9,23 @@ import { Operario } from 'src/app/models/operario';
 })
 export class ListaOperarioComponent implements OnInit {
   operario: Operario;
+  operarios: Operario [];
   constructor(
-    private listaOperario: ListaOperarioService
+    private operarioService: OperarioService
   ) { }
 
-  getOperarios(id: number){
+  getOperario(id: number){
     if (id){
-      this.listaOperario.getOperarios(id).subscribe(operarioFrontApi => {
+      this.operarioService.getOperario(id).subscribe(operarioFrontApi => {
           this.operario = operarioFrontApi;
       });
-}
+     }
+    }
+  getOperarios(){
+    this.operarioService.getOperarios().subscribe(operariosFrontApi => {
+      this.operarios = operariosFrontApi;
+      console.log(this.operarios);
+    });
   }
 
   ngOnInit(): void {

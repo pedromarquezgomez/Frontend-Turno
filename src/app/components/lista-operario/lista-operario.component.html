@@ -1,13 +1,31 @@
-<p>lista-operario works!</p>
-id: <input  type="text" #textId>
-<button (click)="getOperarios(textId.value)">buscar</button>
 
- <ng-container *ngIf="operario">
+<body class="container">
+<button class="btn btn-success" (click)="getOperarios()">lista operarios</button>
+<br>
 
-    <div>id: {{operario.id}}</div>
-    <div>id: {{operario.nombre}}</div>
-    <div>id: {{operario.activo}}</div>
-    <div>id: {{operario.role}}</div>
-   
+<ng-container *ngIf="operarios">
+    <br>
+    <br>
+    <br>
 
+    <table class='table'>
+        <thead>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Role</th>
+            <th>Activo</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let operario of operarios">
+                <td>{{operario.id}}</td>
+                <td>{{operario.nombre}}</td>
+                <td>{{operario.role}}</td>
+                <td>{{operario.activo}}</td>
+
+            </tr>
+        </tbody>
+    </table>
 </ng-container>
+
+</body>
+
