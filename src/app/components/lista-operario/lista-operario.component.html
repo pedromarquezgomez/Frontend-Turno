@@ -1,0 +1,13 @@
+<p>lista-operario works!</p>
+id: <input  type="text" #textId>
+<button (click)="getOperarios(textId.value)">buscar</button>
+
+ <ng-container *ngIf="operario">
+
+    <div>id: {{operario.id}}</div>
+    <div>id: {{operario.nombre}}</div>
+    <div>id: {{operario.activo}}</div>
+    <div>id: {{operario.role}}</div>
+   
+
+</ng-container>
