@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OperarioService } from '../app/services/operario.service';
 import { ReactiveFormsModule } from '@angular/forms';
-import { CrudOperarioComponent } from './components/crud-operario/crud-operario.component';
+import { ListOperarioComponent } from './components/list-operario/list-operario.component';
+import { CreateOperarioComponent } from './components/create-operario/create-operario.component';
+import { UploadOperarioComponent } from './components/upload-operario/upload-operario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CrudOperarioComponent
+    ListOperarioComponent,
+    CreateOperarioComponent,
+    UploadOperarioComponent
   ],
   imports: [
     BrowserModule,
