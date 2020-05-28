@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { OperarioI } from '../../models/operario.interfase';
 import { OperarioService } from 'src/app/services/operario.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateModalOperarioComponent } from '../create-modal-operario/create-modal-operario.component';
+import { Operario } from 'src/app/models/operario.models';
+
 
 @Component({
   selector: 'app-list-operario',
@@ -11,9 +14,10 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class ListOperarioComponent implements OnInit {
   operarios: OperarioI[];
   operario: OperarioI;
+  displayedColumns: string[] = ['id', 'nombre', 'role', 'activo', 'btn-delete', 'btn-upload'];
 
 
-  constructor(private operarioService: OperarioService) {}
+  constructor(private operarioService: OperarioService, public dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.getOperarios();
@@ -36,4 +40,16 @@ export class ListOperarioComponent implements OnInit {
 
   }
 
+  abrirDialogo() {
+    const dialogo1 = this.dialog.open(CreateModalOperarioComponent, {
+      data: new Operario('', '', true)
+    });
+
+    dialogo1.afterClosed().subscribe(operarioModal => {
+      if (operarioModal !== undefined){
+        console.log(operarioModal);
+      }
+    });
+
+}
 }
