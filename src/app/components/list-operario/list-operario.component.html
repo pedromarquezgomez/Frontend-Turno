@@ -45,7 +45,7 @@
             </tfoot>
         </table>
     </ng-container> -->
-    <button mat-raised-button color="primary" (click)="abrirDialogo()">ADD</button>
+    <button mat-raised-button color="primary" (click)="createOperario()">ADD</button>
     <br>
     <br>
     <table mat-table [dataSource]="operarios" class="mat-elevation-z8" #tabla1>
@@ -82,7 +82,7 @@
         <ng-container matColumnDef="btn-upload">
           <th mat-header-cell *matHeaderCellDef> ACTUALIZAR </th>
           <td mat-cell *matCellDef="let operario">
-            <button mat-raised-button color="accent" (click)="editOperario(operario)" >
+            <button mat-raised-button color="accent" (click) = 'actualiza(operario)'>
                 ACTUALIZAR
             </button>
           </td>

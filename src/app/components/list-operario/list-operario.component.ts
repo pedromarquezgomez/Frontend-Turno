@@ -3,8 +3,6 @@ import { OperarioI } from '../../models/operario.interfase';
 import { OperarioService } from 'src/app/services/operario.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateModalOperarioComponent } from '../create-modal-operario/create-modal-operario.component';
-import { Operario } from 'src/app/models/operario.models';
-
 
 @Component({
   selector: 'app-list-operario',
@@ -14,10 +12,22 @@ import { Operario } from 'src/app/models/operario.models';
 export class ListOperarioComponent implements OnInit {
   operarios: OperarioI[];
   operario: OperarioI;
-  displayedColumns: string[] = ['id', 'nombre', 'role', 'activo', 'btn-delete', 'btn-upload'];
+  displayedColumns: string[] = [
+    'id',
+    'nombre',
+    'role',
+    'activo',
+    'btn-delete',
+    'btn-upload',
+  ];
 
+  operarioEdit = null;
+  idOperarioEdit = 0;
 
-  constructor(private operarioService: OperarioService, public dialog: MatDialog) {}
+  constructor(
+    private operarioService: OperarioService,
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit(): void {
     this.getOperarios();
@@ -26,7 +36,6 @@ export class ListOperarioComponent implements OnInit {
   getOperarios() {
     this.operarioService.getOperarios().subscribe((operariosFrontApi) => {
       this.operarios = operariosFrontApi;
-
     });
   }
 
@@ -36,18 +45,33 @@ export class ListOperarioComponent implements OnInit {
     });
   }
 
-  editOperario(operario: OperarioI){
 
-  }
-
-  abrirDialogo() {
-    const dialogo1 = this.dialog.open(CreateModalOperarioComponent, {
-      data: new Operario('', '', true)
+  createOperario() {
+    const dialogoCreate = this.dialog.open(CreateModalOperarioComponent, {
+      data: { nombre: null, role: null, activo: true },
     });
 
-    dialogo1.afterClosed().subscribe(operarioModal => {
-      if (operarioModal !== undefined){
+    dialogoCreate.afterClosed().subscribe((operarioModal) => {
+      if (operarioModal !== undefined) {
         console.log(operarioModal);
+        this.operarioService.postOperario(operarioModal).subscribe(() => {
+          this.getOperarios();
+        });
+      }
+    });
+  }
+
+  actualiza(operario){
+    const dialogoEdit = this.dialog.open(CreateModalOperarioComponent, {
+      data: operario
+    });
+
+    dialogoEdit.afterClosed().subscribe((operarioModal) => {
+      if (operarioModal !== undefined) {
+        console.log(operarioModal);
+        const id: number = operarioModal.id;
+        this.operarioService.editOperario(id, operarioModal).subscribe(() => {
+        });
       }
     });
 

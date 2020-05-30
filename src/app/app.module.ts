@@ -39,6 +39,9 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     FormsModule,
     MatCheckboxModule
   ],
+  entryComponents: [
+    CreateModalOperarioComponent
+  ],
   providers: [OperarioService],
   bootstrap: [AppComponent]
 })

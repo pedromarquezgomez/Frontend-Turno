@@ -23,7 +23,6 @@ export class OperarioService {
   }
 
   postOperario(operarioCreate): Observable<any>{
-    console.log(operarioCreate);
     return this.http.post(`${this.baseURL}/operario/create`, operarioCreate);
   }
 
@@ -31,9 +30,8 @@ export class OperarioService {
     return this.http.delete(`${this.baseURL}/operario/${id}`);
   }
 
-  editOperario(id: number, operarioEdit: OperarioI){
-    console.log(operarioEdit);
-    return this.http.put(`${this.baseURL}/update/${id}`, operarioEdit);
+  editOperario(id: number, operarioEdit: any){
+   return this.http.put<any>(`${this.baseURL}/operario/update/${id}`, operarioEdit);
   }
 
 }
