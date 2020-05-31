@@ -7,24 +7,30 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { OperarioService } from '../app/services/operario.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { ListOperarioComponent } from './components/list-operario/list-operario.component';
-import { CreateOperarioComponent } from './components/create-operario/create-operario.component';
-import { UploadOperarioComponent } from './components/upload-operario/upload-operario.component';
+import { OperarioListComponent } from './components/operario-list/operario-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatTableModule} from '@angular/material/table';
-import {MatButtonModule} from '@angular/material/button';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
 import { CreateModalOperarioComponent } from './components/create-modal-operario/create-modal-operario.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { TurnoListComponent } from './components/turno-list/turno-list.component';
+import { CreateModalTurnoComponent } from './components/create-modal-turno/create-modal-turno.component';
+import { TurnoService } from './services/turno.service';
+import { JornadaListComponent } from './components/jornada-list/jornada-list.component';
+import { CreateModalJornadaComponent } from './components/create-modal-jornada/create-modal-jornada.component';
+import { JornadaService } from './services/jornada.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListOperarioComponent,
-    CreateOperarioComponent,
-    UploadOperarioComponent,
-    CreateModalOperarioComponent
+    OperarioListComponent,
+    CreateModalOperarioComponent,
+    TurnoListComponent,
+    CreateModalTurnoComponent,
+    JornadaListComponent,
+    CreateModalJornadaComponent
   ],
   imports: [
     BrowserModule,
@@ -40,9 +46,11 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatCheckboxModule
   ],
   entryComponents: [
-    CreateModalOperarioComponent
+    CreateModalOperarioComponent,
+    CreateModalTurnoComponent,
+    CreateModalJornadaComponent
   ],
-  providers: [OperarioService],
+  providers: [OperarioService, TurnoService, JornadaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

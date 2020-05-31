@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ListOperarioComponent } from './components/list-operario/list-operario.component';
-import { CreateOperarioComponent } from './components/create-operario/create-operario.component';
-import { UploadOperarioComponent } from './components/upload-operario/upload-operario.component';
+import { OperarioListComponent } from './components/operario-list/operario-list.component';
+import { TurnoListComponent } from './components/turno-list/turno-list.component';
+import { JornadaListComponent } from './components/jornada-list/jornada-list.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: ListOperarioComponent,
+    component: OperarioListComponent,
   },
   {
-    path: 'create',
-    component: CreateOperarioComponent,
+    path: 'listOperario',
+    component: OperarioListComponent,
   },
   {
-    path: 'list',
-    component: ListOperarioComponent,
+    path: 'listTurno',
+    component: TurnoListComponent,
   },
   {
-    path: 'upload',
-    component: UploadOperarioComponent,
+    path: 'listJornada',
+    component: JornadaListComponent,
   }
 ];
 

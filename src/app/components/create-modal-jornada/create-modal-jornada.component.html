@@ -1,0 +1,22 @@
+<div>
+    <h1 mat-dialog-title>JORNADA</h1>
+    <div mat-dialog-content>
+        <div style="display: flex;flex-direction: column; margin:1rem auto; max-width: 600px; padding: 1rem;">
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="jornada.turnoId" type="text" placeholder="turnoId">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="jornada.operarioId" type="text" placeholder="operarioId">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="jornada.fecha" type="date" placeholder="fecha">
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="cancelar()">Cancelar</button>
+        <button mat-button [mat-dialog-close]="jornada" cdkFocusInitial>Confirmar</button>
+    </div>

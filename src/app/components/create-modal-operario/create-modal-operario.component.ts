@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { OperarioI } from 'src/app/models/operario.interfase';
+import { OperarioI } from 'src/app/models/operario.interface';
 
 
 @Component({

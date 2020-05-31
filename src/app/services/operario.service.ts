@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { OperarioI } from '../models/operario.interfase';
+import { OperarioI } from '../models/operario.interface';
 
 
 
@@ -30,8 +30,8 @@ export class OperarioService {
     return this.http.delete(`${this.baseURL}/operario/${id}`);
   }
 
-  editOperario(id: number, operarioEdit: any){
-   return this.http.put<any>(`${this.baseURL}/operario/update/${id}`, operarioEdit);
+  editOperario(id: number, operarioEdit: OperarioI){
+   return this.http.put(`${this.baseURL}/operario/update/${id}`, operarioEdit);
   }
 
 }

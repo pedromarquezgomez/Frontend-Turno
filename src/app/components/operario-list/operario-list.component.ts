@@ -1,15 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { OperarioI } from '../../models/operario.interfase';
+import { OperarioI } from '../../models/operario.interface';
 import { OperarioService } from 'src/app/services/operario.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateModalOperarioComponent } from '../create-modal-operario/create-modal-operario.component';
 
 @Component({
   selector: 'app-list-operario',
-  templateUrl: './list-operario.component.html',
-  styleUrls: ['./list-operario.component.css'],
+  templateUrl: './operario-list.component.html',
+  styleUrls: ['./operario-list.component.css'],
 })
-export class ListOperarioComponent implements OnInit {
+export class OperarioListComponent implements OnInit {
   operarios: OperarioI[];
   operario: OperarioI;
   displayedColumns: string[] = [

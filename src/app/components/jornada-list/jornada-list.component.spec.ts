@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UploadOperarioComponent } from './upload-operario.component';
+import { JornadaListComponent } from './jornada-list.component';
 
-describe('UploadOperarioComponent', () => {
-  let component: UploadOperarioComponent;
-  let fixture: ComponentFixture<UploadOperarioComponent>;
+describe('JornadaListComponent', () => {
+  let component: JornadaListComponent;
+  let fixture: ComponentFixture<JornadaListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UploadOperarioComponent ]
+      declarations: [ JornadaListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UploadOperarioComponent);
+    fixture = TestBed.createComponent(JornadaListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

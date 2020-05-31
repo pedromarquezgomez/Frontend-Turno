@@ -1,0 +1,22 @@
+<div>
+    <h1 mat-dialog-title>OPERARIO</h1>
+    <div mat-dialog-content>
+        <div style="display: flex;flex-direction: column; margin:1rem auto; max-width: 600px; padding: 1rem;">
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="turno.nombre" type="text" placeholder="Nombre">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="turno.entrada" type="text" placeholder="entrada">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput [(ngModel)]="turno.salida" type="text" placeholder="salida">
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="cancelar()">Cancelar</button>
+        <button mat-button [mat-dialog-close]="turno" cdkFocusInitial>Confirmar</button>
+    </div>

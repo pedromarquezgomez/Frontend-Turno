@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CreateOperarioComponent } from './create-operario.component';
+import { CreateModalJornadaComponent } from './create-modal-jornada.component';
 
-describe('CreateOperarioComponent', () => {
-  let component: CreateOperarioComponent;
-  let fixture: ComponentFixture<CreateOperarioComponent>;
+describe('CreateModalJornadaComponent', () => {
+  let component: CreateModalJornadaComponent;
+  let fixture: ComponentFixture<CreateModalJornadaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CreateOperarioComponent ]
+      declarations: [ CreateModalJornadaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CreateOperarioComponent);
+    fixture = TestBed.createComponent(CreateModalJornadaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
