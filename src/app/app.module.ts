@@ -20,6 +20,7 @@ import { TurnoService } from './services/turno.service';
 import { JornadaListComponent } from './components/jornada-list/jornada-list.component';
 import { CreateModalJornadaComponent } from './components/create-modal-jornada/create-modal-jornada.component';
 import { JornadaService } from './services/jornada.service';
+import { CuadranteComponent } from './components/cuadrante/cuadrante.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { JornadaService } from './services/jornada.service';
     TurnoListComponent,
     CreateModalTurnoComponent,
     JornadaListComponent,
-    CreateModalJornadaComponent
+    CreateModalJornadaComponent,
+    CuadranteComponent
   ],
   imports: [
     BrowserModule,
