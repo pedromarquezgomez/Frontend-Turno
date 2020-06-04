@@ -21,7 +21,7 @@ import { JornadaListComponent } from './components/jornada-list/jornada-list.com
 import { CreateModalJornadaComponent } from './components/create-modal-jornada/create-modal-jornada.component';
 import { JornadaService } from './services/jornada.service';
 import { CuadranteComponent } from './components/cuadrante/cuadrante.component';
-
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,8 @@ import { CuadranteComponent } from './components/cuadrante/cuadrante.component';
     MatInputModule,
     MatDialogModule,
     FormsModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatTabsModule
   ],
   entryComponents: [
     CreateModalOperarioComponent,
