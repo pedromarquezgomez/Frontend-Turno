@@ -1,50 +1,5 @@
-<body class="container">
-    <!-- <ng-container >
-        <button class="btn btn-success">
-            Nuevo operario
-        </button>
-        <br />
-        <br />
-
-        <table class="mat-elevation-z8">
-            <thead>
-                <th>ID</th>
-                <th>NOMBRE</th>
-                <th>ROLE</th>
-                <th>ACTIVO</th>
-                <th>EDIT</th>
-                <th>DELETE</th>
-            </thead>
-            <tbody>
-                <tr class="border" *ngFor="let operario of operarios">
-                    <td>{{ operario.id }}</td>
-                    <td>{{ operario.nombre }}</td>
-                    <td>{{ operario.role }}</td>
-                    <td>{{ operario.activo }}</td>
-                    <td>
-                        <button class="btn btn-primary" (click)= "editOperario(operario)">
-                            EDIT
-                        </button>
-                    </td>
-                    <td>
-                        <button class="btn btn-danger" (click)="deleteOperario(operario.id)">
-                            DELETE
-                        </button>
-                    </td>
-                </tr>
-                <tr>
-                    <td><button type="button" class="btn btn-secondary float-left">Example Button floated left</button></td>
-                    <td><button type="button" class="btn btn-secondary float-right">Example Button floated right</button></td>
-                      
-                </tr>
-            </tbody>
-            <tfoot>
-
-                
-               
-            </tfoot>
-        </table>
-    </ng-container> -->
+<div class="container">
+   
     <button mat-raised-button color="primary" (click)="createOperario()">ADD</button>
     <br>
     <br>
@@ -92,4 +47,4 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
 
-</body>
+    </div>
