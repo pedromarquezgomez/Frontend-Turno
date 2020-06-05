@@ -26,6 +26,11 @@ export class AppComponent implements OnInit{
         link: 'listJornada',
         index: 2,
       },
+      {
+        label: 'Cuadrante',
+        link: 'listCuadrante',
+        index: 3,
+      }
     ];
   }
   ngOnInit(): void {

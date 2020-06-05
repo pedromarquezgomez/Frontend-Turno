@@ -18,7 +18,6 @@ export class JornadaListComponent implements OnInit {
     'operarioId',
     'fecha',
     'btn-delete',
-    'btn-upload',
   ];
 
   jornadaEdit = null;

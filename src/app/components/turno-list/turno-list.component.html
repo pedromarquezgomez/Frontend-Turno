@@ -1,8 +1,8 @@
 <div class="container">
-<button mat-raised-button color="primary" (click)="createTurno()">ADD</button>
-    <br>
-    <br>
-    <table mat-table [dataSource]="turnos" class="mat-elevation-z8" #tabla1>
+<button mat-mini-fab color="primary" (click)="createTurno()"><mat-icon>add</mat-icon></button>
+   <br>
+   <br>
+    <table mat-table [dataSource]="turnos" class=" mat-elevation-z8 centered " #tabla1>
 
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -25,20 +25,14 @@
         </ng-container>
 
         <ng-container matColumnDef="btn-delete">
-          <th mat-header-cell *matHeaderCellDef> BORRAR </th>
+          <th mat-header-cell *matHeaderCellDef style="color: blue;"> TURNO</th>
           <td mat-cell *matCellDef="let turno">
-            <button mat-raised-button color="warn" (click)="deleteTurno(turno.id)" >
-                BORRAR
+            <button  mat-icon-button color="warn" (click)="deleteTurno(turno.id)" >
+              <mat-icon>delete</mat-icon>
             </button>
-          </td>
-        </ng-container>
-
-        <ng-container matColumnDef="btn-upload">
-          <th mat-header-cell *matHeaderCellDef> ACTUALIZAR </th>
-          <td mat-cell *matCellDef="let turno">
-            <button mat-raised-button color="accent" (click) = 'actualiza(turno)'>
-                ACTUALIZAR
-            </button>
+            <button mat-icon-button color="accent" (click) = 'actualiza(turno)'>
+              <mat-icon>edit</mat-icon>
+          </button>
           </td>
         </ng-container>
       

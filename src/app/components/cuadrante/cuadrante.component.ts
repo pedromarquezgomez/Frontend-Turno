@@ -26,7 +26,6 @@ export class CuadranteComponent implements OnInit {
     'operarioId',
     'fecha',
     'btn-delete',
-    'btn-upload',
   ];
 
   jornadaEdit = [];
@@ -67,7 +66,7 @@ export class CuadranteComponent implements OnInit {
   }
 
 
-  createJornada() {
+  createCuadrante() {
     const dialogoCreate = this.dialog.open(CreateModalJornadaComponent, {
       data: { nombre: [], role: [], activo: true },
     });

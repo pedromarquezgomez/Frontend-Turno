@@ -18,8 +18,7 @@ export class TurnoListComponent implements OnInit {
     'nombre',
     'entrada',
     'salida',
-    'btn-delete',
-    'btn-upload',
+    'btn-delete'
   ];
 
   TurnoEdit = null;

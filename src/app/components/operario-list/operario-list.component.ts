@@ -18,7 +18,6 @@ export class OperarioListComponent implements OnInit {
     'role',
     'activo',
     'btn-delete',
-    'btn-upload',
   ];
 
   operarioEdit = null;
