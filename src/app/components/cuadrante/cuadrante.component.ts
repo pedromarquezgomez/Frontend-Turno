@@ -2,12 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { JornadaI } from 'src/app/models/jornada.interface';
 import { JornadaService } from 'src/app/services/jornada.service';
 import { MatDialog } from '@angular/material/dialog';
-import { CreateModalJornadaComponent } from '../create-modal-jornada/create-modal-jornada.component';
 import { TurnoI } from 'src/app/models/turno.interace';
 import { OperarioI } from 'src/app/models/operario.interface';
 import { OperarioService } from 'src/app/services/operario.service';
 import { TurnoService } from 'src/app/services/turno.service';
-import { async } from '@angular/core/testing';
+import { CreateModalCuadranteComponent } from '../create-modal-cuadrante/create-modal-cuadrante.component';
 
 @Component({
   selector: 'app-cuadrante',
@@ -22,8 +21,8 @@ export class CuadranteComponent implements OnInit {
 
   displayedColumns: string[] = [
     'id',
-    'turnoId',
     'operarioId',
+    'turnoId',
     'fecha',
     'btn-delete',
   ];
@@ -67,7 +66,7 @@ export class CuadranteComponent implements OnInit {
 
 
   createCuadrante() {
-    const dialogoCreate = this.dialog.open(CreateModalJornadaComponent, {
+    const dialogoCreate = this.dialog.open(CreateModalCuadranteComponent, {
       data: { nombre: [], role: [], activo: true },
     });
 
@@ -82,7 +81,7 @@ export class CuadranteComponent implements OnInit {
   }
 
   actualiza(jornada){
-    const dialogoEdit = this.dialog.open(CreateModalJornadaComponent, {
+    const dialogoEdit = this.dialog.open(CreateModalCuadranteComponent, {
       data: jornada
     });
 

@@ -1,0 +1,30 @@
+<div>
+    <h1 mat-dialog-title>JORNADA</h1>
+    <div mat-dialog-content>
+        <div style="display: flex;flex-direction: column; margin:1rem auto; max-width: 600px; padding: 1rem;">
+
+            <mat-form-field>
+                <mat-select placeholder="Operarios" [(ngModel)]="jornada.operarioId" name="operario">
+                  <mat-option *ngFor="let op of operarios" [value]="op.id">
+                    {{op.nombre}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <mat-form-field>
+                <mat-select placeholder="Turnos" [(ngModel)]="jornada.turnoId" name="turno">
+                  <mat-option *ngFor="let turn of turnos" [value]="turn.id">
+                    {{turn.nombre}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+            <mat-form-field>
+                <input matInput  type="date" [(ngModel)]="jornada.fecha" placeholder="fecha">
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="cancelar()">Cancelar</button>
+        <button mat-button [mat-dialog-close]="jornada" cdkFocusInitial>Confirmar</button>
+    </div>

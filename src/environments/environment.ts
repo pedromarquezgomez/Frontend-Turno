@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiURL: 'https://apiturnov04.azurewebsites.net/'
+  apiURL: 'https://apiturnov04.azurewebsites.net'
 };
 
 /*

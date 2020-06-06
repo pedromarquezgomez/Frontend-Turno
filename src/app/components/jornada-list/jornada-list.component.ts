@@ -14,8 +14,8 @@ export class JornadaListComponent implements OnInit {
   jornada: JornadaI;
   displayedColumns: string[] = [
     'id',
-    'turnoId',
     'operarioId',
+    'turnoId',
     'fecha',
     'btn-delete',
   ];

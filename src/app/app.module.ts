@@ -23,7 +23,8 @@ import { JornadaService } from './services/jornada.service';
 import { CuadranteComponent } from './components/cuadrante/cuadrante.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
-
+import { CreateModalCuadranteComponent } from './components/create-modal-cuadrante/create-modal-cuadrante.component';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import {MatIconModule} from '@angular/material/icon';
     CreateModalTurnoComponent,
     JornadaListComponent,
     CreateModalJornadaComponent,
-    CuadranteComponent
+    CuadranteComponent,
+    CreateModalCuadranteComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +52,8 @@ import {MatIconModule} from '@angular/material/icon';
     FormsModule,
     MatCheckboxModule,
     MatTabsModule,
-    MatIconModule
+    MatIconModule,
+    MatSelectModule
   ],
   entryComponents: [
     CreateModalOperarioComponent,
