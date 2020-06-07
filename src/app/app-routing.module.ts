@@ -4,6 +4,7 @@ import { OperarioListComponent } from './components/operario-list/operario-list.
 import { TurnoListComponent } from './components/turno-list/turno-list.component';
 import { JornadaListComponent } from './components/jornada-list/jornada-list.component';
 import { CuadranteComponent } from './components/cuadrante/cuadrante.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'listCuadrante',
     component: CuadranteComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
   }
 ];
 

@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { OperarioService } from '../app/services/operario.service';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { OperarioListComponent } from './components/operario-list/operario-list.component';
@@ -21,10 +21,22 @@ import { JornadaListComponent } from './components/jornada-list/jornada-list.com
 import { CreateModalJornadaComponent } from './components/create-modal-jornada/create-modal-jornada.component';
 import { JornadaService } from './services/jornada.service';
 import { CuadranteComponent } from './components/cuadrante/cuadrante.component';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatIconModule} from '@angular/material/icon';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatIconModule } from '@angular/material/icon';
 import { CreateModalCuadranteComponent } from './components/create-modal-cuadrante/create-modal-cuadrante.component';
 import { MatSelectModule } from '@angular/material/select';
+import { HomeComponent } from './components/home/home.component';
+import { NavComponent } from './components/nav/nav.component';
+import { LoginComponent } from './components/login/login.component';
+
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { LoginService } from './services/login.service';
+import { AuthInterceptoService } from './services/auth-intercepto.service';
+
+
 
 
 @NgModule({
@@ -37,7 +49,10 @@ import { MatSelectModule } from '@angular/material/select';
     JornadaListComponent,
     CreateModalJornadaComponent,
     CuadranteComponent,
-    CreateModalCuadranteComponent
+    CreateModalCuadranteComponent,
+    HomeComponent,
+    NavComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -53,14 +68,29 @@ import { MatSelectModule } from '@angular/material/select';
     MatCheckboxModule,
     MatTabsModule,
     MatIconModule,
-    MatSelectModule
+    MatSelectModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatProgressSpinnerModule
   ],
   entryComponents: [
     CreateModalOperarioComponent,
     CreateModalTurnoComponent,
     CreateModalJornadaComponent
   ],
-  providers: [OperarioService, TurnoService, JornadaService],
+  providers: [
+    OperarioService,
+    TurnoService,
+    JornadaService,
+    LoginService,
+    AuthInterceptoService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptoService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
