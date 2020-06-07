@@ -10,30 +10,36 @@ export class NavComponent implements OnInit { navLinks: any[];
   activeLinkIndex = -1;
   constructor(private router: Router) {
     this.navLinks = [
+
+      {
+        label: 'Home',
+        link: 'home',
+        index: 0,
+      },
       {
         label: 'Operario',
         link: 'listOperario',
-        index: 0,
+        index: 1,
       },
       {
         label: 'Turno',
         link: 'listTurno',
-        index: 1,
+        index: 2,
       },
       {
         label: 'Jornada',
         link: 'listJornada',
-        index: 2,
+        index: 3,
       },
       {
         label: 'Cuadrante',
         link: 'listCuadrante',
-        index: 3,
+        index: 4,
       },
       {
         label: 'Login',
         link: 'login',
-        index: 3,
+        index: 5,
       }
     ];
   }

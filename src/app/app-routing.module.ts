@@ -5,12 +5,17 @@ import { TurnoListComponent } from './components/turno-list/turno-list.component
 import { JornadaListComponent } from './components/jornada-list/jornada-list.component';
 import { CuadranteComponent } from './components/cuadrante/cuadrante.component';
 import { LoginComponent } from './components/login/login.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: OperarioListComponent,
+    component: HomeComponent,
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
   },
   {
     path: 'listOperario',
