@@ -25,8 +25,9 @@ ngOnInit(): void {
   this.turnoService.getTurnos().subscribe((turnosFrontApi) => {
     this.turnos = turnosFrontApi;
   });
-  this.operarioService.getOperarios().subscribe((turnosFrontApi) => {
-    this.operarios = turnosFrontApi;
+  this.operarioService.getOperarios().subscribe((operariosFrontApi) => {
+    this.operarios = operariosFrontApi;
+    this.operarios = this.operarios.filter(operario => operario.activo === true);
   });
 }
 cancelar() {

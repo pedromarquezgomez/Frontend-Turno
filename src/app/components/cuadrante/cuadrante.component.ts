@@ -87,7 +87,6 @@ export class CuadranteComponent implements OnInit {
 
     dialogoEdit.afterClosed().subscribe((jornadaModal) => {
       if (jornadaModal !== undefined) {
-        console.log(jornadaModal);
         const id: number = jornadaModal.id;
         this.jornadaService.editJornada(id, jornadaModal).subscribe(() => {
         });
@@ -98,7 +97,7 @@ export class CuadranteComponent implements OnInit {
 
 getNombreOperario(id: number): string{
   if (this.operarios){
-  return this.operarios.find(operario => operario.id === id).nombre;
+    return this.operarios.find(operario => operario.id === id).nombre;
   }
 }
 getNombreTurno(id: number): string{
