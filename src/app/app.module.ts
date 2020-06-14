@@ -35,6 +35,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoginService } from './services/login.service';
 import { AuthInterceptoService } from './services/auth-intercepto.service';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 
 
@@ -85,6 +86,7 @@ import { AuthInterceptoService } from './services/auth-intercepto.service';
     JornadaService,
     LoginService,
     AuthInterceptoService,
+    MatSnackBar,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptoService,

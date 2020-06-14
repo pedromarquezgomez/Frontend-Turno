@@ -3,6 +3,8 @@ import { HttpInterceptor, HttpRequest, HttpHandler, HttpEvent, HttpErrorResponse
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import {MatSnackBar} from '@angular/material/snack-bar';
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,8 @@ import { Router } from '@angular/router';
 export class AuthInterceptoService implements HttpInterceptor {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -31,7 +34,8 @@ export class AuthInterceptoService implements HttpInterceptor {
       catchError((err: HttpErrorResponse) => {
 
         if (err.status === 401) {
-          this.router.navigateByUrl('/login');
+          console.log(err.status);
+          this.openSnackBar('Requiere autorización', 'Log in');
         }
 
         return throwError( err );
@@ -39,5 +43,17 @@ export class AuthInterceptoService implements HttpInterceptor {
       })
     );
   }
+  openSnackBar(message: string, action: string) {
+    const snackBarRef = this.snackBar.open(message, action, {
+      duration: 5000,
+      verticalPosition: 'top'
+    });
+    snackBarRef.afterDismissed().subscribe(() => {
 
+    });
+    snackBarRef.onAction().subscribe(() => {
+      this.router.navigateByUrl('/login');
+    });
+
+}
 }
